@@ -1,0 +1,54 @@
+&__menu {
+  @extend %listreset;
+  font-size: 0;
+  
+  > li {
+    display: inline-block;
+    width: 100%;
+
+    @include media ('>=tablet') {
+      width: auto;
+    }
+
+    &:not(:last-child){
+      margin-right: 22px;
+    }
+
+    &.active,
+    &:hover {
+      > a {
+        color: map-get($navigation, activeColor);
+        &:after {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    > a {
+      @include animate (color);
+      position: relative;
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 31px 0;
+      color: currentColor;
+      text-align: center;
+
+      &:after {
+        @include animate (transform);
+        position: absolute;
+        content: '';
+        left: 0;
+        width: 100%;
+        bottom: -1px;
+        height: 2px;
+        transform: scaleX(0);
+        background: map-get($navigation, activeColor);
+      }
+
+      @include media ('>=tablet') {
+        display: inline-block;
+      }
+    }
+  }
+}

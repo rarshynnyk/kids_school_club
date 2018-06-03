@@ -1,0 +1,8 @@
+$user: (
+  color: map-get($baseColors, dark),
+  activeColor: map-get($baseColors, primary),
+  logoBg: map-get($baseColors, primary),
+  activeLogoBg: map-get($baseColors, light),
+  logoColor: map-get($baseColors, light),
+  activeLogoColor: map-get($baseColors, primary)
+)

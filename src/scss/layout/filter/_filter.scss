@@ -1,0 +1,9 @@
+.filter {
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  @import 'filter__heading';
+  @import 'filter__body';
+  @import 'filter__value';
+}

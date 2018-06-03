@@ -1,0 +1,9 @@
+$search: (
+  shadowColor: rgba(map-get($baseColors, dark), .05),
+  borderColor: map-get($baseColors, muted100),
+  activeBorderColor: map-get($baseColors, primary),
+  background: map-get($baseColors, light),
+  radius: 2px,
+  resultsActiveBg: map-get($baseColors, primary),
+  resultsActiveColor: map-get($baseColors, light)
+);

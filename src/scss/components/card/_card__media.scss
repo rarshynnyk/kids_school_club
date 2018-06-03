@@ -1,0 +1,18 @@
+&__media {
+  position: relative;
+  display: block;
+  background: map-get($card, mediaBg);
+
+  &:before {
+    display: block;
+    content: '';
+    padding-top: 66%;
+  }
+}
+
+&__img {
+  @include fullContain(absolute);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

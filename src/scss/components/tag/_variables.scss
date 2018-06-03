@@ -1,0 +1,8 @@
+$tag: (
+  background: map-get($baseColors, light),
+  activeBg: map-get($baseColors, primary),
+  activeColor: map-get($baseColors, light),
+  borderColor: map-get($baseColors, muted100),
+  activeBorderColor: map-get($baseColors, primary),
+  radius: 3px
+);

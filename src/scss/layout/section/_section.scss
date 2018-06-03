@@ -1,0 +1,9 @@
+.section {
+    padding: 0 0 15px;
+
+    @include media ('>=desktop') {
+        padding: 0;
+    }
+    @import 'section__heading';
+    @import 'section__toolbar';
+}

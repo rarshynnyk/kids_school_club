@@ -1,0 +1,21 @@
+.card {
+  @extend %clearfix;
+  font-size: 14px;
+  font-weight: 500;
+  background: map-get($card, background);
+  border-radius: map-get($card, radius);
+  margin: 0 0 15px;
+  overflow: hidden;
+  @include media ('>=tablet') {
+    margin-bottom: 30px;
+  }
+
+  @import 'card__media';
+  @import 'card__content';
+  @import 'card__info';
+  @import 'card__title';
+  @import 'card__rating';
+  @import 'card__tags';
+  @import 'card__contacts';
+  @import 'card__footer';
+}

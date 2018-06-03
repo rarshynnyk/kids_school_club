@@ -1,0 +1,6 @@
+&__user {
+  margin: 15px auto;
+  @include media ('>=tablet') {
+    margin: 0 0 0 auto;
+  }
+}

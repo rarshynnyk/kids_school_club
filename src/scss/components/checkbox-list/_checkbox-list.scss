@@ -1,0 +1,59 @@
+.checkbox-list {
+  @extend %listreset;
+  font-size: 0;
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  label {
+    @include v-align;
+    display: inline-block;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__item {
+    @include v-align;
+    display: inline-block;
+    font-size: 0;
+    width: 26px;
+    height: 26px;
+    border: 1px solid map-get($checkboxList, itemBorderColor);
+    border-radius: map-get($checkboxList, itemRadius);
+
+    .icon-check {
+      font-size: 13px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    label:hover &,
+    input[type=checkbox]:checked + & {
+      border-color: map-get($checkboxList, activeItemBorderColor);
+      color: map-get($checkboxList, activeItemColor);
+      
+      .icon-check {
+        opacity: 1;
+        visibility: visible;
+        margin: -2px 0 0 5px;
+      }
+    }
+
+    & + .checkbox-list__text {
+      margin-left: 12px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+  }
+}

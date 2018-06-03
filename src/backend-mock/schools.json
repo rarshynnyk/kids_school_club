@@ -1,0 +1,136 @@
+{
+  "schools": [
+    {
+      "id": 1,
+      "title": "The Little Gym",
+      "coverUrl": "assets/images/card-1-img.jpg",
+      "rating": {
+        "currentValue": 4.7
+      },
+      "types": "private",
+      "typesLabel": "Private School",
+      "tags": ["sports", "fitness"],
+      "weekdays": {
+        "start": "9:00 AM",
+        "end": "4:00 PM"
+      },
+      "address": "124 Hudson St, New York, NY 10013",
+      "phone": "+1 212-941-9300",
+      "phoneHref": "+12129419300",
+      "price": 400,
+      "isFavorited": false,
+      "periods": "weekly",
+      "special": "asd"
+    },
+    {
+      "id": 2,
+      "title": "NY Preschool",
+      "coverUrl": "assets/images/card-2-img.jpg",
+      "rating": {
+        "currentValue": 4.4
+      },
+      "types": "public",
+      "typesLabel": "Public Preschool",
+      "tags": ["art", "music", "dance", "theater", "sports"],
+      "weekdays": {
+        "start": "7:00 AM",
+        "end": "6:00 PM"
+      },
+      "address": "182 Henry St, Brooklyn, NY 11201",
+      "phone": "+1 718-228-0800",
+      "phoneHref": "+17182280800",
+      "price": 380,
+      "isFavorited": false,
+      "periods": "weekly",
+      "special": "asd"
+    },
+    {
+      "id": 3,
+      "title": "Kidville FiDi",
+      "coverUrl": "assets/images/card-3-img.jpg",
+      "rating": {
+        "currentValue": 4.2
+      },
+      "types": "private",
+      "typesLabel": "Private School",
+      "tags": ["Art", "music", "theater"],
+      "weekdays": {
+        "start": "7:00 AM",
+        "end": "6:00 PM"
+      },
+      "address": "40 Gold St, New York, NY 10038",
+      "phone": "+1 212-566-2020",
+      "phoneHref": "+12125662020",
+      "price": 450,
+      "isFavorited": false,
+      "periods": "weekly",
+      "special": "asd"
+    },
+    {
+      "id": 4,
+      "title": "NY Kids Club",
+      "coverUrl": "assets/images/card-4-img.jpg",
+      "rating": {
+        "currentValue": 3
+      },
+      "types": "private",
+      "typesLabel": "Private Club",
+      "tags": ["music", "dance", "theater"],
+      "weekdays": {
+        "start": "7:00 AM",
+        "end": "6:00 PM"
+      },
+      "address": "393 South End Ave, New York",
+      "phone": "+1 212-991-3000",
+      "phoneHref": "+12129913000",
+      "price": 380,
+      "isFavorited": false,
+      "periods": "weekly",
+      "special": "asd"
+    },
+    {
+      "id": 5,
+      "title": "The Little Gym",
+      "coverUrl": "assets/images/card-5-img.jpg",
+      "rating": {
+        "currentValue": 4.7
+      },
+      "types": "private",
+      "typesLabel": "Private School",
+      "tags": ["sports", "fitness"],
+      "weekdays": {
+        "start": "9:00 AM",
+        "end": "4:00 PM"
+      },
+      "address": "124 Hudson St, New York, NY 10013",
+      "phone": "+1 212-941-9300",
+      "phoneHref": "+12129419300",
+      "price": 400,
+      "isFavorited": true,
+      "periods": "weekly",
+      "special": "asd"
+    },
+    {
+      "id": 6,
+      "title": "NY Preschool",
+      "coverUrl": "assets/images/card-6-img.jpg",
+      "rating": {
+        "currentValue": 4.4
+      },
+      "types": "public",
+      "typesLabel": "Public Preschool",
+      "tags": ["Art", "music", "dance", "theater", "sports"],
+      "weekdays": {
+        "start": "7:00 AM",
+        "end": "6:00 PM"
+      },
+      "address": "182 Henry St, Brooklyn, NY 11201",
+      "phone": "+1 718-228-0800",
+      "phoneHref": "+17182280800",
+      "price": 380,
+      "isFavorited": false,
+      "periods": "weekly",
+      "special": "asd"
+    }
+  ]
+}

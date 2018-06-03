@@ -1,0 +1,9 @@
+.search {
+  display: flex;
+  width: 100%;
+
+  @import 'search__label';
+  @import 'search__dropdown';
+  @import 'search__input';
+  @import 'search__results';
+}

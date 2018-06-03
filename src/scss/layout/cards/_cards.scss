@@ -1,0 +1,9 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  @include media ('>=desktop') {
+    margin-bottom: 106px;
+  }
+}

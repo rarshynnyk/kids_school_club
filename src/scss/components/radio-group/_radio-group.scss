@@ -1,0 +1,51 @@
+.radio-group {
+  display: flex;
+  font-size: 0;
+
+  &__label {
+    flex: 1;
+    cursor: pointer;
+
+    input[type=radio] {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:first-child {
+      .radio-group__item {
+        border-top-left-radius: map-get($radioGroup, radius);
+        border-bottom-left-radius: map-get($radioGroup, radius);
+        border-left: 1px solid map-get($radioGroup, borderColor);
+      }
+    }
+
+    &:last-child {
+      .radio-group__item {
+        border-top-right-radius: map-get($radioGroup, radius);
+        border-bottom-right-radius: map-get($radioGroup, radius);
+        border-right: 1px solid map-get($radioGroup, borderColor);
+      }
+    }
+  }
+
+  &__item {
+    @include animate (background color);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid map-get($radioGroup, borderColor);
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    background: map-get($radioGroup, itemBg);
+    color: map-get($radioGroup, itemColor);
+    text-align: center;
+
+    &:hover,
+    input[type=radio]:checked + & {
+      background: map-get($radioGroup, itemActiveBg);
+      color: map-get($radioGroup, itemActiveColor);
+    }
+  }
+}

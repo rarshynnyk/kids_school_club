@@ -1,0 +1,50 @@
+.user {
+  @include animate (color);
+  display: inline-flex;
+  align-items: center;
+  color: map-get($user, color);
+
+  &.active,
+  &:hover {
+    color: map-get($user, activeColor);
+
+    .user__logo {
+      background: map-get($user, activeLogoBg);
+      color: map-get($user, activeLogoColor);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 700;
+
+    & + .user__logo {
+      margin-left: 15px;
+    }
+  }
+
+  &__logo {
+    @include animate (background color);
+    @include v-align;
+    display: block;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+    border-radius: 50%;
+    background: map-get($user, logoBg);
+    color: map-get($user, logoColor);
+
+    @supports (display: flex) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [class^="icon"] {
+      margin-top: -3px;
+      &:before {
+        font-size: 20px;
+      }
+    }
+  }
+}

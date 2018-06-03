@@ -1,0 +1,19 @@
+.tag {
+  @include animate (background color border-color);
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 500;
+  background: map-get($tag, background);
+  border: 1px solid map-get($tag, borderColor);
+  border-radius: map-get($tag, radius);
+  padding: 10px 14px;
+  margin: 0 5px 5px 0;
+
+  &:hover,
+  &.active {
+    background: map-get($tag, activeBg);
+    color: map-get($tag, activeColor);
+    border-color: map-get($tag, activeBorderColor);
+  }
+}

@@ -1,0 +1,24 @@
+.dropdown {
+  &__toggle {
+    @include v-align;
+    color: map-get($dropdown, toggleColor);
+
+    &:hover,
+    .dropdown.active & {
+      [class^="icon-"] {
+        &:before {
+          transform: rotate(180deg);
+        }
+      }  
+    }
+
+    [class^="icon-"] {
+      font-size: 8px;
+
+      &:before {
+        @include animate (transform);
+        display: inline-block;
+      }
+    }
+  }
+}

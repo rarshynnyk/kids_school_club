@@ -1,0 +1,35 @@
+.rating {
+  font-size: 14px;
+  font-weight: 500;
+  color: map-get($rating, color);
+  text-align: left;
+
+  @supports (display: flex) {
+    display: flex;
+    align-items: center;
+  }
+
+  &__stars {
+    display: inline-block;
+    margin-top: -3px;
+    font-size: 0;
+    @supports (display: flex) {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .rating__text + & {
+      margin-left: 9px;
+    }
+  }
+
+  .vue-star-rating-star{
+    &:not(:first-child) {
+      margin-left: 3px;
+    }
+  }
+
+  .vue-star-rating-rating-text {
+    display: none;
+  }
+}

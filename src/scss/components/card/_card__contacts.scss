@@ -1,0 +1,30 @@
+&__contacts {
+  @extend %listreset;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 22px;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  address {
+    @include v-align;
+    font-style: normal;
+    text-align: left;
+
+    @supports (display: flex) {
+      display: flex;
+    }
+
+    [class^="icon-"] {
+      font-size: 20px;
+      margin: -3px 0 0 5px;
+      color: map-get($card, addressIconColor);
+      margin-left: auto;
+    }
+  }
+  
+}

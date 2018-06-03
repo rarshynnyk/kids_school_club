@@ -1,0 +1,5 @@
+$rating: (
+  color: map-get($baseColors, success),
+  starColor: map-get($baseColors, success100),
+  starActiveColor:  map-get($baseColors, success)
+)

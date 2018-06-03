@@ -1,0 +1,41 @@
+$baseColors: (
+  light: #fff,
+  dark: #000,
+  primary: #128dec,
+  success: #11ca11,
+  success100: #b7efb7,
+  muted: #dddbd3,
+  muted100: #e1e1e1,
+  muted200: #999,
+  gray: #d4e7e9
+);
+
+$base: (
+  'base-font-family': unquote('MuseoSansCyrl'),
+  'base-background-color': #f6f4eb,
+  'base-text-color': map-get($baseColors, dark),
+  'base-font-size': 16px,
+  'base-line-height': 1.2,
+  'base-link-color': map-get($baseColors, primary),
+  'base-link-underline': false
+);
+
+
+// Breakpoints for include media mixin
+$breakpoints: (
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 980px,
+  'widescreen': 1200px
+);
+
+// Keywords for include media mixin
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);

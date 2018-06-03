@@ -1,0 +1,22 @@
+$enable-grid-classes: true !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 992px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 982px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;

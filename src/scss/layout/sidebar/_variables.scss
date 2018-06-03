@@ -1,0 +1,5 @@
+$sidebar: (
+  background: map-get($baseColors, light),
+  borderColor: map-get($baseColors, muted100),
+  radius: 3px
+);

@@ -1,0 +1,7 @@
+$card: (
+  background: map-get($baseColors, light),
+  radius: 3px,
+  mediaBg: map-get($baseColors, gray),
+  infoBorderColor: map-get($baseColors, muted100),
+  addressIconColor: map-get($baseColors, primary)
+);

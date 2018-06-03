@@ -1,0 +1,39 @@
+&__heading {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin: 0 0 10px;
+
+  .toggle-btn {
+    @include animate (color);
+    text-align: left;
+    width: 100%;
+
+    &:hover,
+    &.active {
+      color: map-get($baseColors, primary);
+    }
+
+    &.active {
+      [class^="icon-"] {
+        &:before {
+          transform: rotate(180deg);
+        }
+      }  
+    }
+
+    [class^="icon-"] {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 9px;
+
+      &:before {
+        @include animate (transform);
+        display: inline-block;
+      }
+    }
+  }
+}

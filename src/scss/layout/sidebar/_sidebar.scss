@@ -1,0 +1,6 @@
+.sidebar {
+  background: map-get($sidebar, background);
+  border: 1px solid map-get($sidebar, borderColor);
+  border-radius: map-get($sidebar, radius);
+  padding: 24px 20px;
+}

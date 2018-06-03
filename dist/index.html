@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids schools &amp; clubs</title>
+  <link media="all" rel="stylesheet" href="assets/css/vendor.min.css">
+  <link media="all" rel="stylesheet" href="assets/css/style.min.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 col-sm-2">
+              <strong>
+                <a href="/" class="logo">
+                  <img src="assets/images/logo.png" alt="Kids schools &amp; clubs">
+                </a>
+              </strong>
+            </div>
+            <button 
+              type="button" 
+              class="navigation__toggle"
+              @click="toggleNav"
+            >
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+            <div class="col-md-10">
+              <nav :class="{'navigation navigation--top': true, 'active': isMobileNavVisible}">
+                <ul class="navigation__menu">
+                  <li class="active"><a href="#">Schools and clubs</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Contact us</a></li>
+                </ul>
+                <div class="navigation__user">
+                  <a href="#" class="user">
+                    <span class="user__text">Karen</span>
+                    <span class="user__logo">
+                      <i class="icon-user"></i>
+                    </span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="section">
+        <header class="section__heading">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h1>Schools &amp; clubs</h1>
+              </div>
+              <div class="col-md-8">
+                <div class="search">
+                  <div class="search__label">
+                    <span class="ellipsis">New York</span>
+                  </div>
+                  <div class="search__dropdown">
+                    <i class="icon-search"></i>
+                    <input type="text" class="search__input" placeholder="Search for location, street, bus stop, etc.">
+                    <ul class="search__results">
+                      <li>
+                        <a href="#">Use my current location</a>
+                      </li>
+                      <li>
+                        <a href="#">Choose on map</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="section__toolbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="toolbar-item">{{filteredItems.length}} found</div>
+                <div class="toolbar-item">
+                  <span>Sorted by </span>
+                  <div class="dropdown">
+                    <button class="dropdown__toggle">
+                      <span>rating </span>
+                      <i class="icon-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="toolbar-item">
+                  <a href="#">
+                    <i class="icon-pin"></i>
+                    <span>Map view</span>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 text-right">
+                <div class="toolbar-item">
+                  <span>Prices:</span>
+                  <div class="dropdown">
+                    <button class="dropdown__toggle">
+                      <span>weekly </span>
+                      <i class="icon-chevron-down"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section__body">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <div class="cards" v-if="filteredItems.length">
+                  <div class="col-md-6" v-for="item in filteredItems" :key="item.id" >
+                    <grid-item :item="item" />
+                  </div>
+                </div>
+                <div v-else>
+                  <h1>No products founded!</h1>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <aside class="sidebar">
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>Location radius</span>
+                      <div class="filter__value">{{location.value}} miles</div>
+                    </header>
+                    <div class="filter__body">
+                      <vue-slider 
+                        v-bind="location" 
+                        v-model="location.value"
+                      ></vue-slider>
+                      <div class="small text-muted text-right">
+                        ~10 min <i class="icon-car"></i>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>Open days</span>
+                    </header>
+                    <div class="filter__body">
+                      <div class="radio-group">
+                        <label 
+                          v-for="day in days.options"
+                          class="radio-group__label"
+                        >
+                          <input
+                            type="radio" 
+                            :id="day" 
+                            :value="day" 
+                            v-model="days.current"
+                          >
+                          <span class="radio-group__item">
+                            {{ day | capitalize }}
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>Open hours</span>
+                      <div class="filter__value">{{ hours.value[0]}}—{{hours.value[1]}}</div>
+                    </header>
+                    <div class="filter__body">
+                      <vue-slider 
+                        v-bind="hours" 
+                        v-model="hours.value"
+                      ></vue-slider>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>Age group</span>
+                      <div class="filter__value">{{ years.value }} years</div>
+                    </header>
+                    <div class="filter__body">
+                      <vue-slider 
+                        v-bind="years" 
+                        v-model="years.value"
+                      ></vue-slider>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <button 
+                        :class="{'toggle-btn': true, 'active': isSpecialsVisible}"
+                        @click="specialsToggle"
+                      >
+                        <span>Children with special needs</span>
+                        <i class="icon-chevron-down"></i>
+                      </button>
+                    </header>
+                    <div class="filter__body" v-if="isSpecialsVisible">
+                      <ul class="checkbox-list">
+                        <li v-for="special in specials">
+                          <label :class="{'active': isActive(special.value)}">
+                            <input 
+                              type="checkbox"
+                              :id="special.value"
+                              :value="special.value"
+                              v-model="specialsCurrent"
+                            />
+                            <span class="checkbox-list__item">
+                              <i class="icon-check"></i>
+                            </span>
+                            <span class="checkbox-list__text">{{special.label}}</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>School or club category</span>
+                    </header>
+                    <div class="filter__body">
+                      <div class="radio-group">
+                        <label 
+                          v-for="type in types.options"
+                          class="radio-group__label"
+                        >
+                          <input
+                            type="radio" 
+                            :id="type" 
+                            :value="type" 
+                            v-model="types.current"
+                          >
+                          <span class="radio-group__item">
+                            {{ type | capitalize }}
+                          </span>
+                        </label>
+                      </div>
+                      <div class="tags">
+                        <button
+                          v-for="tag in tags"
+                          :class="{'tag': true, 'active': isActive(tag)}"
+                          @click="setActive(tag)"
+                        >
+                          {{tag | capitalize}}
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="filter">
+                    <header class="filter__heading">
+                      <span>Price range</span>
+                      <div class="filter__value">$ {{price.value[0]}}—{{price.value[1]}}</div>
+                    </header>
+                    <div class="filter__body">
+                      <vue-slider 
+                        v-bind="price" 
+                        v-model="price.value"
+                      ></vue-slider>
+                      <div class="radio-group">
+                        <label 
+                          v-for="period in periods.options"
+                          class="radio-group__label"
+                        >
+                          <input
+                            type="radio" 
+                            :id="period" 
+                            :value="period" 
+                            v-model="periods.current"
+                          >
+                          <span class="radio-group__item">
+                            {{ period | capitalize }}
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </section>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <strong>
+            <a href="/" class="logo">
+              <img src="assets/images/logo.png" alt="Kids schools &amp; clubs">
+            </a>
+          </strong>
+        </div>
+        <div class="col-md-10">
+          <nav class="navigation navigation--bottom">
+            <ul class="navigation__menu">
+              <li><a href="#">Schools and clubs</a></li>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+            <div class="navigation__copy">
+              2017
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/vendor.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>

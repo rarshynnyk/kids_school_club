@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;  
+  right: 0;
+  background: map-get($header, background);
+  z-index: 99999;
+  box-shadow: 0 0 10px rgba(map-get($baseColors, dark), .3);
+
+  @include media ('>=tablet') {
+    margin-bottom: 34px;
+    position: static;
+    box-shadow: none;
+  }
+
+  .logo {
+    display: inline-block;
+    margin: 5px 0 0;
+    width: 80px;
+
+    @include media ('>=tablet') {
+      margin: 22px 0 0 0;
+      width: auto;
+    }
+  }
+}

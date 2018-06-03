@@ -1,0 +1,21 @@
+&__label {
+  line-height: 46px;
+  height: 46px;
+  border: 1px solid map-get($search, borderColor);
+  border-right: none;
+  background: map-get($search, background);
+  padding: 0 19px;
+  border-top-left-radius: map-get($search, radius);
+  border-bottom-left-radius: map-get($search, radius);
+  width: 190px;
+  flex: 0 0 190px;
+  display: none;
+
+  @include media ('>=desktop') {
+    display: block;
+  }
+
+  .ellipsis {
+    display: block;
+  }
+}

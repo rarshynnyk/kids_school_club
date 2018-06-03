@@ -1,0 +1,10 @@
+&__rating {
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px;
+
+  .card__type {
+    color: map-get($baseColors, success);
+    margin-left: auto;
+  }
+}

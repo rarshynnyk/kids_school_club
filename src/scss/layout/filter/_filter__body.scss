@@ -1,0 +1,7 @@
+&__body {
+  .radio-group {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}

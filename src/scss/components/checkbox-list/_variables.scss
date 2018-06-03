@@ -1,0 +1,6 @@
+$checkboxList: (
+  itemBorderColor: map-get($baseColors, muted100),
+  activeItemBorderColor: map-get($baseColors, primary),
+  activeItemColor: map-get($baseColors, primary),
+  itemRadius: 3px
+);

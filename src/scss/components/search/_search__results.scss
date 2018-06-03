@@ -1,0 +1,24 @@
+&__results {
+  @extend %listreset;
+  display: none;
+  font-weight: 500;
+  background: map-get($search, background);
+  padding: 5px 0;
+
+  > li {
+    &:hover,
+    &.active {
+      > a {
+        background: map-get($search, resultsActiveBg);
+        color: map-get($search, resultsActiveColor);
+      }
+    }
+
+    > a {
+      @include animate (background color);
+      display: block;
+      padding: 10px 15px;
+      
+    }
+  }
+}

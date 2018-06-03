@@ -1,0 +1,17 @@
+&__input {
+  font-family: map-get($base, 'base-font-family');
+  width: 100%;
+  font-weight: 500;
+  height: 46px;
+  padding: 10px 45px;
+  border: 1px solid map-get($search, borderColor);
+  border-top-right-radius: map-get($search, radius);
+  border-bottom-right-radius: map-get($search, radius);
+
+  .search__dropdown.active &,
+  &:focus {
+    border-color: map-get($search, activeBorderColor);
+    outline: none;
+    border-radius: 0;
+  }
+}

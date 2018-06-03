@@ -1,0 +1,25 @@
+.like {
+  @include animate (color);
+  @extend .icon-heart;
+  font-size: 0;
+  color: map-get($like, color);
+
+  &:hover,
+  &:active {
+    color: darken(map-get($like, color), 15%);
+  }
+
+  &.active {
+    @extend .icon-heart_active;
+    color: map-get($like, activeColor);
+    &:hover,
+    &:active {
+      color: darken(map-get($like, activeColor), 15%);
+    }
+  }
+
+  &:before {
+    @extend [class^="icon-"];
+    font-size: 15px;
+  }
+}

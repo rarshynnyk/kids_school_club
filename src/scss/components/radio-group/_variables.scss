@@ -1,0 +1,8 @@
+$radioGroup: (
+  borderColor: map-get($baseColors, muted100),
+  radius: 3px,
+  itemBg: map-get($baseColors, light),
+  itemActiveBg: map-get($baseColors, muted100),
+  itemColor: map-get($baseColors, dark),
+  itemActiveColor: map-get($baseColors, primary)
+);

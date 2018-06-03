@@ -1,0 +1,19 @@
+&__dropdown {
+  position: relative;
+  width: 100%;
+
+  > [class^="icon-"] {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+  }
+
+  &.active {
+    box-shadow: 0 0 20px map-get($search, shadowColor);
+
+    .search__results {
+      display: block;
+    }
+  }
+}

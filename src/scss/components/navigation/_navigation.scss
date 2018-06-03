@@ -1,0 +1,28 @@
+.navigation {
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+
+  @include media ('>=tablet') {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--top {
+    border-bottom: 1px solid map-get($navigation, borderColor);
+  }
+
+  &--bottom {
+    border-top: 1px solid map-get($navigation, borderColor);
+  }
+
+  @import 'navigation__toggle';
+  @import 'navigation__menu';
+  @import 'navigation__user';
+  @import 'navigation__copy';
+}

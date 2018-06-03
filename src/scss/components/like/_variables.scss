@@ -1,0 +1,4 @@
+$like: (
+  color: map-get($baseColors, muted),
+  activeColor: map-get($baseColors, primary)
+)
